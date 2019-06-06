@@ -1,0 +1,169 @@
+Psaradellis, Stephen	spsa220 
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+ArrayStack
+
+LinkedStack
+
+ListStack
+
+Note: prog05/Parser.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Enter arithmetic expression or cancel. 
+numberStack:  1.0
+operatorStack: 
+numberStack:  1.0
+operatorStack:  +
+numberStack:  1.0 2.0
+operatorStack:  +
+numberStack:  3.0
+operatorStack: 
+1+2 = 3.0
+Enter arithmetic expression or cancel. 
+numberStack:  1.0
+operatorStack: 
+numberStack:  1.0
+operatorStack:  -
+numberStack:  1.0 2.0
+operatorStack:  -
+numberStack:  -1.0
+operatorStack: 
+1-2 = -1.0
+Enter arithmetic expression or cancel. 
+numberStack:  1.0
+operatorStack: 
+numberStack:  1.0
+operatorStack:  +
+numberStack:  1.0 2.0
+operatorStack:  +
+numberStack:  1.0 2.0
+operatorStack:  + *
+numberStack:  1.0 2.0 3.0
+operatorStack:  + *
+numberStack:  1.0 2.0 3.0
+operatorStack:  + * ^
+numberStack:  1.0 2.0 3.0 4.0
+operatorStack:  + * ^
+numberStack:  1.0 2.0 81.0
+operatorStack:  + *
+numberStack:  1.0 162.0
+operatorStack:  +
+numberStack:  163.0
+operatorStack: 
+1+2*3^4 = 163.0
+Enter arithmetic expression or cancel. 
+numberStack: 
+operatorStack:  (
+numberStack:  1.0
+operatorStack:  (
+numberStack:  1.0
+operatorStack:  ( +
+numberStack:  1.0 2.0
+operatorStack:  ( +
+numberStack:  3.0
+operatorStack:  (
+numberStack:  3.0
+operatorStack: 
+numberStack:  3.0
+operatorStack:  *
+numberStack:  3.0 3.0
+operatorStack:  *
+numberStack:  9.0
+operatorStack: 
+(1+2)*3 = 9.0
+Enter arithmetic expression or cancel. 
+numberStack: 
+operatorStack:  (
+numberStack: 
+operatorStack:  ( (
+numberStack:  1.0
+operatorStack:  ( (
+numberStack:  1.0
+operatorStack:  ( ( +
+numberStack:  1.0 2.0
+operatorStack:  ( ( +
+numberStack:  3.0
+operatorStack:  ( (
+numberStack:  3.0
+operatorStack:  (
+numberStack:  3.0
+operatorStack:  ( *
+numberStack:  3.0 3.0
+operatorStack:  ( *
+numberStack:  9.0
+operatorStack:  (
+numberStack:  9.0
+operatorStack: 
+numberStack:  9.0
+operatorStack:  ^
+numberStack:  9.0 2.0
+operatorStack:  ^
+numberStack:  81.0
+operatorStack: 
+((1+2)*3)^2 = 81.0
+Enter arithmetic expression or cancel. 
+numberStack: 
+operatorStack:  u
+numberStack:  1.0
+operatorStack:  u
+numberStack:  -1.0
+operatorStack: 
+-1 = -1.0
+Enter arithmetic expression or cancel. 
+numberStack:  1.0
+operatorStack: 
+numberStack:  1.0
+operatorStack:  /
+numberStack:  1.0 2.0
+operatorStack:  /
+numberStack:  1.0 2.0
+operatorStack:  / ^
+numberStack:  1.0 2.0
+operatorStack:  / ^ u
+numberStack:  1.0 2.0 3.0
+operatorStack:  / ^ u
+numberStack:  1.0 2.0 -3.0
+operatorStack:  / ^
+numberStack:  1.0 0.125
+operatorStack:  /
+numberStack:  8.0
+operatorStack: 
+1/2^-3 = 8.0
+Enter arithmetic expression or cancel. 
+numberStack:  1.0
+operatorStack: 
+numberStack:  1.0
+operatorStack:  +
+numberStack:  1.0 2.0
+operatorStack:  +
+numberStack:  1.0 2.0
+operatorStack:  + /
+numberStack:  1.0 2.0
+operatorStack:  + / u
+numberStack:  1.0 2.0 3.0
+operatorStack:  + / u
+numberStack:  1.0 2.0 3.0
+operatorStack:  + / u ^
+numberStack:  1.0 2.0 3.0
+operatorStack:  + / u ^ u
+numberStack:  1.0 2.0 3.0 4.0
+operatorStack:  + / u ^ u
+numberStack:  1.0 2.0 3.0 -4.0
+operatorStack:  + / u ^
+numberStack:  1.0 2.0 0.012345679012345678
+operatorStack:  + / u
+numberStack:  1.0 2.0 -0.012345679012345678
+operatorStack:  + /
+numberStack:  1.0 -162.0
+operatorStack:  +
+numberStack:  -161.0
+operatorStack: 
+numberStack:  -161.0
+operatorStack:  +
+numberStack:  -161.0 5.0
+operatorStack:  +
+numberStack:  -156.0
+operatorStack: 
+1+2/-3^-4+5 = -156.0
+Enter arithmetic expression or cancel. 
+

@@ -1,0 +1,37 @@
+-1. When doing this assignment, don't delete my comments.  Please try
+    to put your code where the comments indicate.
+
+0. Create package prog10.  Go get BTree.java.
+
+1. Read over the definition of the Entry that I went over in class.
+   Make sure you understand it.
+
+2. Implement findInList using the comments provided.
+
+3. Implement findInListOfLists using the comments provided.  When you
+   are sure you have got all the cases right, have the TA check you.
+
+4. In find, do the two cases.
+
+5. Run.  containsKey should work correctly.  (But get won't work, and
+   put will cause an exception.)
+
+6. Implement get.  Does it work now?
+
+7. Look over split and put carefully.
+
+TRY TO GET 8 DONE DURING LAB.  ASK QUESTIONS.
+
+8. Do the missing parts of the recursive insert method.
+   **ADD EACH LINE AFTER MY COMMENT** so you can check yourself later.
+   Test your program.  It should work except for removes.
+
+HOMEWORK
+
+9. Finish the public remove method.
+
+10. Implement the recursive private remove method.
+
+11. Once you get BTree.main working, test BTree with Jumble. (Copy
+   Jumble.java to prog10, etc.)
+

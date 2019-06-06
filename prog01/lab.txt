@@ -1,0 +1,148 @@
+CSC 220 prog01
+
+   PAY ATTENTION to what you program does today and why.  Read the notes
+   "Object Oriented Programming" on the CSC220 Lecture Discussion Forum
+   this evening.  There will be questions on the quiz tomorrow.
+
+1. Accounts
+	log in
+        change password:
+               Applications->System Tools->Terminal
+	       yppasswd
+        start Firefox (Applications->Internet->Firefox)
+        go into Blackboard for the lecture (miami.edu/blackboard)
+        discussion board (on the left)
+        CSC220 Lecture Discussion Board
+        SUBSCRIBE
+        go into Blackboard for the LAB
+        discussion board (on the left)
+        CSC220 Lab Discussion Board
+        SUBSCRIBE
+        go to the lab posting
+        go to source directory
+
+2. Create a new Java project
+	start eclipse (Applications->Programming->Eclipse)
+	accept default location for workspace
+        select workbench (if it gives you a choice)
+	File->New Project->Java->Java Project
+	Next
+	project name: csc220 (NOT CSC220 NOT csc 220)
+	Finish
+	Yes to Java Perspective (if it asks)
+
+3. Create a new package for this lab
+	expand csc220
+	right click on src
+        new -> package
+        name it prog01 (NOT Prog01 NOT prog 01)
+	Finish
+
+4. Create java files in this package
+	visit the source directory (on the discussion board)
+        visit Main.java
+        save into workspace/csc220/src/prog01
+        do the same for Computer.java and Notebook.java
+        click on prog01 in Eclipse and press f5
+        or right-click and select REFRESH
+
+5. Fix compiler errors and run
+	open prog01
+        double-click on Main.java
+        comment out offending lines
+        press white triangle inside green circle to run
+	Go to line with runtime error by double clicking on it
+	something like (Main.java:21)
+        comment out line with run time error and try again
+	
+
+6. Debugging
+	set a breakpoint on the first line "Set a breakpoint here..."
+	(right click to the left of line and select Toggle Breakpoint
+        run the debugger (buggy thing next to white triangle)
+	let it switch you to debug perspective
+        single step through the program
+	use step-into (two symbols to the right of red square near top)
+        if you get a blank screen too many times, use step-return
+        if you are not calling methods in the package, use step-over
+        notice how you can see the value of variables
+        notice how you can see where you called from
+	try changing the value of a variable, like procSpeed in Computer
+	to access object variables, expand "this"
+        try setting breakpoints in methods
+
+7. Use the Visual Debugger
+    To Install:
+	Open Eclipse and go to Help->Install New Software...
+	In the "Work With" field type in: http://web.cs.miami.edu/home/jgmaster/DebugPlugin/
+	Uncheck "Group Items by Category" on this form
+	Click "next" and "accept" until it starts to install
+
+    To Use:
+	Put a breakpoint in whatever file you're going to debug
+	Go to Window->Show View->Other...
+	Expand the Debug category and select "CSC220 Debugging Visualizer"
+	The view should appear in the panel near the console view, you can move this around and even take it out on it's own completely by just dragging the tab.
+	Start debugging the program with the bug button
+	When the program breaks on a breakpoint, the visualizer should show the current state of the data structure and all other local variables. 
+	Single step (over or into) and the visualization should update.
+	Try looking at the Variables view and try to see the correspondences from the textual layout of the data to the visual layout
+
+	Double click a node with a highlighted border to expand it
+	Drag the nodes in between single stepping, they should remain in place during the next step
+	Right click and click save in the context menu to save an image of the figure
+
+8. Object Oriented Programming
+	notice that c2 is an instance of a Notebook
+	even though the variable is of type Computer
+
+Even if we call your notebook a computer, it's still a notebook.
+For example, I say:  ``Please install Eclipse on your computer.''
+That might refer to your notebook or your desktop.
+
+        notice that when you print out c2,
+        it calls the Notebook toString method
+	you can set a breakpoint in that toString method
+
+9. Overriding a method
+	uncomment the computePower method in Notebook.java
+	fix the first compiler error by using getRamSize()
+	fix the second error by changing processorSpeed
+	from private to protected in Computer.java
+        notice that c2.computePower() now calls this method
+
+AT HOME
+
+10. Set up a Google Drive folder at home.  The following instructions
+    assume you do not have a Google Drive folder.
+
+    Go to the UMIT Google Drive web page:
+
+http://www.miami.edu/it/index.php/about_it/aas/ps/documentation/google_drive/
+
+    There is a Google Drive account associated with your UM email
+    address (NOT @gmail.com).
+    Follow the instructions to set it up.
+    Download the app.
+    Set up a local folder that is synced with Google Drive.
+
+10'. If you already have a Google Drive folder with a different Google
+     account, you can use that for the course.
+
+11. Install Eclipse.  Follow the link on the home page for CSC220 and
+    install the standard version.  Windows users may also have to
+    install the JDK.
+
+12. Run Eclipse and tell it to put the workspace folder into your
+    Google Drive folder.  Do steps 2 and 3 above.  You might have to
+    exit Eclipse to do step 12.
+
+13. Log into Google Drive in your web browser.  Click into
+    workspace/csc220.  Right click on src and share it with
+
+	csc220@cs.miami.edu
+
+    You will get a warning, but that is o.k.
+
+14. Do steps 4-9 above.
+

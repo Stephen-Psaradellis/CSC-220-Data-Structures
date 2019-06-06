@@ -1,0 +1,732 @@
+1. Create package prog07 and put my Jumble.java into it.  Look at the
+   definition of the sort method.  When you run the program, it will
+   show you the sorted version for every 1000th word.
+
+
+2. Now put each word into the map (using the put method).  For a
+   jumble lookup dictionary, what is the key?  What is the value?
+
+
+3. Now write the code to solve a jumble.  What is the key?  Use the
+   get method of map to get the unscrambled word associated with that
+   key.  Test your jumble program.
+
+
+4. Download DummyList.java into prog07.  Then you run it, you will get
+   the following output:
+
+java prog07/DummyList
+{}
+containsKey(A) = false
+containsKey(C) = true
+containsKey(L) = false
+containsKey(M) = false
+containsKey(Y) = false
+containsKey(Z) = false
+get(A) = null
+get(C) = null
+get(L) = null
+get(M) = null
+get(Y) = null
+get(Z) = null
+remove(A) = null
+remove(C) = null
+remove(L) = null
+remove(M) = null
+remove(Y) = null
+remove(Z) = null
+{}
+Exception in thread "main" java.lang.UnsupportedOperationException
+	at java.util.AbstractMap.put(AbstractMap.java:203)
+	at prog07.DummyList.main(DummyList.java:129)
+
+
+5. Implement hasNext() and next() in Iter.  The Iter keeps track of
+   the previous node.  When does it have a next?  The next() method
+   moves previous forward and returns what used to be the next Node
+   (which is now the previous node).  Notice that printing a DummyList
+   now works.  How can that be so when you haven't written a print
+   method?
+
+java prog07/DummyList
+{C=2, E=4, G=6, I=8, K=10, M=12, O=14, Q=16, S=18, U=20, W=22, Y=24}
+containsKey(A) = false
+containsKey(C) = true
+containsKey(L) = false
+containsKey(M) = false
+containsKey(Y) = false
+containsKey(Z) = false
+get(A) = null
+get(C) = null
+get(L) = null
+get(M) = null
+get(Y) = null
+get(Z) = null
+remove(A) = null
+Exception in thread "main" java.lang.UnsupportedOperationException
+	at prog07.DummyList$Iter.remove(DummyList.java:45)
+	at java.util.AbstractMap.remove(AbstractMap.java:247)
+	at prog07.DummyList.main(DummyList.java:119)
+
+
+6. Implement findPrevious(start).  Move node forward until it is the
+   one previous to where the key is or where it should go. The
+   containsKey method, which uses findPrevious, should start working.
+
+java prog07/DummyList
+{C=2, E=4, G=6, I=8, K=10, M=12, O=14, Q=16, S=18, U=20, W=22, Y=24}
+containsKey(A) = false
+containsKey(C) = true
+containsKey(L) = false
+containsKey(M) = true
+containsKey(Y) = true
+containsKey(Z) = false
+get(A) = null
+get(C) = null
+get(L) = null
+get(M) = null
+get(Y) = null
+get(Z) = null
+remove(A) = null
+Exception in thread "main" java.lang.UnsupportedOperationException
+	at prog07.DummyList$Iter.remove(DummyList.java:45)
+	at java.util.AbstractMap.remove(AbstractMap.java:247)
+	at prog07.DummyList.main(DummyList.java:118)
+
+
+7. Finish implementing get.  Use findPrevious, not a loop.
+   If you are having trouble, read the protected containsKey method
+   again.  Then try to write *it* without looking.
+
+java prog07/DummyList
+{C=2, E=4, G=6, I=8, K=10, M=12, O=14, Q=16, S=18, U=20, W=22, Y=24}
+containsKey(A) = false
+containsKey(C) = true
+containsKey(L) = false
+containsKey(M) = true
+containsKey(Y) = true
+containsKey(Z) = false
+get(A) = null
+get(C) = 2
+get(L) = null
+get(M) = 12
+get(Y) = 24
+get(Z) = null
+remove(A) = null
+Exception in thread "main" java.lang.UnsupportedOperationException
+	at prog07.DummyList$Iter.remove(DummyList.java:45)
+	at java.util.AbstractMap.remove(AbstractMap.java:247)
+	at prog07.DummyList.main(DummyList.java:118)
+
+
+8. Implement the public remove method of the Map interface, again
+   using findPrevious and not a loop.
+
+java prog07/DummyList
+{C=2, E=4, G=6, I=8, K=10, M=12, O=14, Q=16, S=18, U=20, W=22, Y=24}
+containsKey(A) = false
+containsKey(C) = true
+containsKey(L) = false
+containsKey(M) = true
+containsKey(Y) = true
+containsKey(Z) = false
+get(A) = null
+get(C) = 2
+get(L) = null
+get(M) = 12
+get(Y) = 24
+get(Z) = null
+remove(A) = null
+remove(C) = 2
+remove(L) = null
+remove(M) = 12
+remove(Y) = 24
+remove(Z) = null
+{E=4, G=6, I=8, K=10, O=14, Q=16, S=18, U=20, W=22}
+Exception in thread "main" java.lang.UnsupportedOperationException
+	at java.util.AbstractMap.put(AbstractMap.java:203)
+	at prog07.DummyList.main(DummyList.java:139)
+
+
+9. Implement the public put method.  Remember that put
+   changes the value and returns the old value if the key is already
+   there but it inserts a new node and returns null if it is not.
+   Don't forget to increment size in the second case.
+
+java prog07/DummyList
+{C=2, E=4, G=6, I=8, K=10, M=12, O=14, Q=16, S=18, U=20, W=22, Y=24}
+containsKey(A) = false
+containsKey(C) = true
+containsKey(L) = false
+containsKey(M) = true
+containsKey(Y) = true
+containsKey(Z) = false
+get(A) = null
+get(C) = 2
+get(L) = null
+get(M) = 12
+get(Y) = 24
+get(Z) = null
+remove(A) = null
+remove(C) = 2
+remove(L) = null
+remove(M) = 12
+remove(Y) = 24
+remove(Z) = null
+{E=4, G=6, I=8, K=10, O=14, Q=16, S=18, U=20, W=22}
+put(A,7) = null
+put(A,9) = 7
+put(M,17) = null
+put(M,19) = 17
+put(Z,3) = null
+put(Z,20) = 3
+{A=9, E=4, G=6, I=8, K=10, M=19, O=14, Q=16, S=18, U=20, W=22, Z=20}
+
+
+10. Next switch Jumble to using DummyList and see how many Jumble
+    words you can unscramble.  Unfortunately, some of them aren't in
+    "words" and you will need the much larger dictionary "dict".  But
+    DummyList is not fast enough to load "dict".  (Try it.)
+
+
+HOMEWORK
+
+11. Put SkipList.java into prog07 and run it.  The calls to put only
+    use the version of put inherited from DummyList so there are no
+    index lists.  But I wrote a test method makeTestLists() which
+    create the index lists using the "every other" rule.  That's why
+    the SkipList is of this form:
+
+java prog07/SkipList
+put(B,1)=null
+put(C,2)=null
+put(D,3)=null
+put(E,4)=null
+put(F,5)=null
+put(G,6)=null
+put(H,7)=null
+put(I,8)=null
+put(J,9)=null
+put(K,10)=null
+put(L,11)=null
+put(M,12)=null
+put(N,13)=null
+put(O,14)=null
+put(P,15)=null
+put(Q,16)=null
+put(R,17)=null
+put(S,18)=null
+put(T,19)=null
+put(U,20)=null
+put(V,21)=null
+put(W,22)=null
+put(X,23)=null
+put(Y,24)=null
+put(Z,25)=null
+Q 
+I Q Y 
+E I M Q U Y 
+C E G I K M O Q S U W Y 
+{B=1, C=2, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, L=11, M=12, N=13, O=14, P=15, Q=16, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24, Z=25}
+containsKey(A)=false
+containsKey(C)=true
+containsKey(L)=true
+containsKey(M)=true
+containsKey(Z)=true
+containsKey(Zoe)=false
+get(A)=null
+get(C)=2
+get(L)=11
+get(M)=12
+get(Z)=25
+get(Zoe)=null
+remove(A)=null
+remove(C)=2
+remove(L)=11
+remove(Q)=16
+remove(Z)=25
+remove(Zoe)=null
+Q 
+I Q Y 
+E I M Q U Y 
+C E G I K M O Q S U W Y 
+{B=1, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, M=12, N=13, O=14, P=15, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24}
+put(A,10)=null
+put(A,11)=10
+put(L,20)=null
+put(L,21)=20
+put(Z,30)=null
+put(Z,31)=30
+Q 
+I Q Y 
+E I M Q U Y 
+C E G I K M O Q S U W Y 
+{A=11, B=1, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, L=21, M=12, N=13, O=14, P=15, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24, Z=31}
+
+
+12. Add the following line to the top of DummyList.findPrevious:
+
+	System.out.print(start.key + " ");
+
+    Now the program shows the starting point in each list that
+    containsKey accesses.  For now it is just null because it is still
+    using DumyList containsKey.
+
+java prog07/SkipList
+null put(B,1)=null
+null put(C,2)=null
+null put(D,3)=null
+null put(E,4)=null
+null put(F,5)=null
+null put(G,6)=null
+null put(H,7)=null
+null put(I,8)=null
+null put(J,9)=null
+null put(K,10)=null
+null put(L,11)=null
+null put(M,12)=null
+null put(N,13)=null
+null put(O,14)=null
+null put(P,15)=null
+null put(Q,16)=null
+null put(R,17)=null
+null put(S,18)=null
+null put(T,19)=null
+null put(U,20)=null
+null put(V,21)=null
+null put(W,22)=null
+null put(X,23)=null
+null put(Y,24)=null
+null put(Z,25)=null
+Q 
+I Q Y 
+E I M Q U Y 
+C E G I K M O Q S U W Y 
+{B=1, C=2, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, L=11, M=12, N=13, O=14, P=15, Q=16, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24, Z=25}
+null containsKey(A)=false
+null containsKey(C)=true
+null containsKey(L)=true
+null containsKey(M)=true
+null containsKey(Z)=true
+null containsKey(Zoe)=false
+null get(A)=null
+null get(C)=2
+null get(L)=11
+null get(M)=12
+null get(Z)=25
+null get(Zoe)=null
+null remove(A)=null
+null remove(C)=2
+null remove(L)=11
+null remove(M)=12
+null remove(Z)=25
+null remove(Zoe)=null
+Q 
+I Q Y 
+E I M Q U Y 
+C E G I K M O Q S U W Y 
+{B=1, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, N=13, O=14, P=15, Q=16, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24}
+null put(A,10)=null
+null put(A,11)=10
+null put(M,20)=null
+null put(M,21)=20
+null put(Z,30)=null
+null put(Z,31)=30
+Q 
+I Q Y 
+E I M Q U Y 
+C E G I K M O Q S U W Y 
+{A=11, B=1, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, M=21, N=13, O=14, P=15, Q=16, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24, Z=31}
+
+
+13. Now containsKey needs to use the SkipList structure.  Look at
+    slFindPerfect and slFind to make sure you understand how it works.
+
+    a. Copy containsKey from DummyList to SkipList.
+
+    b. The start node is the top dummy.  Declare it after key.
+
+    c. Do the following while start is a skip node (use skipNode method).
+
+    d. previous is the Node previous to the key on this level.  What
+       method do you call to calculate previous?
+
+    e. To go down, the new start is
+
+		(Node) previous.value
+
+       We have to use the cast "(Node)" because we only know it is a
+       Node at run time thanks to isSkip
+
+    f. NOW continue with the findPrevious of DummyList.  EXCEPT that
+       it uses start.
+
+    I will put the solution down at the bottom of lab.txt, but if you
+    can't do it on your own, at least on the second try, you won't be
+    able to do the more complicated methods.
+
+    Now the trace of containsKey shows nodes on every level:
+
+null null I I K containsKey(M)=true
+
+    Here is what the entire output looks like now:
+
+java prog07/SkipList
+null put(B,1)=null
+null put(C,2)=null
+null put(D,3)=null
+null put(E,4)=null
+null put(F,5)=null
+null put(G,6)=null
+null put(H,7)=null
+null put(I,8)=null
+null put(J,9)=null
+null put(K,10)=null
+null put(L,11)=null
+null put(M,12)=null
+null put(N,13)=null
+null put(O,14)=null
+null put(P,15)=null
+null put(Q,16)=null
+null put(R,17)=null
+null put(S,18)=null
+null put(T,19)=null
+null put(U,20)=null
+null put(V,21)=null
+null put(W,22)=null
+null put(X,23)=null
+null put(Y,24)=null
+null put(Z,25)=null
+Q 
+I Q Y 
+E I M Q U Y 
+C E G I K M O Q S U W Y 
+{B=1, C=2, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, L=11, M=12, N=13, O=14, P=15, Q=16, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24, Z=25}
+null null null null null containsKey(A)=false
+null null null null null containsKey(C)=true
+null null I I K containsKey(L)=true
+null null I I K containsKey(M)=true
+null Q Y Y Y containsKey(Z)=true
+null Q Y Y Y containsKey(Zoe)=false
+null get(A)=null
+null get(C)=2
+null get(L)=11
+null get(M)=12
+null get(Z)=25
+null get(Zoe)=null
+null remove(A)=null
+null remove(C)=2
+null remove(L)=11
+null remove(Q)=16
+null remove(Z)=25
+null remove(Zoe)=null
+Q 
+I Q Y 
+E I M Q U Y 
+C E G I K M O Q S U W Y 
+{B=1, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, M=12, N=13, O=14, P=15, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24}
+null put(A,10)=null
+null put(A,11)=10
+null put(L,20)=null
+null put(L,21)=20
+null put(Z,30)=null
+null put(Z,31)=30
+Q 
+I Q Y 
+E I M Q U Y 
+C E G I K M O Q S U W Y 
+{A=11, B=1, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, L=21, M=12, N=13, O=14, P=15, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24, Z=31}
+
+
+
+14. Now implement get.  Notice how you see the trace of the previous
+    on each level now before each get.
+
+java prog07/SkipList
+null put(B,1)=null
+null put(C,2)=null
+null put(D,3)=null
+null put(E,4)=null
+null put(F,5)=null
+null put(G,6)=null
+null put(H,7)=null
+null put(I,8)=null
+null put(J,9)=null
+null put(K,10)=null
+null put(L,11)=null
+null put(M,12)=null
+null put(N,13)=null
+null put(O,14)=null
+null put(P,15)=null
+null put(Q,16)=null
+null put(R,17)=null
+null put(S,18)=null
+null put(T,19)=null
+null put(U,20)=null
+null put(V,21)=null
+null put(W,22)=null
+null put(X,23)=null
+null put(Y,24)=null
+null put(Z,25)=null
+Q 
+I Q Y 
+E I M Q U Y 
+C E G I K M O Q S U W Y 
+{B=1, C=2, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, L=11, M=12, N=13, O=14, P=15, Q=16, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24, Z=25}
+null null null null null containsKey(A)=false
+null null null null null containsKey(C)=true
+null null I I K containsKey(L)=true
+null null I I K containsKey(M)=true
+null Q Y Y Y containsKey(Z)=true
+null Q Y Y Y containsKey(Zoe)=false
+null null null null null get(A)=null
+null null null null null get(C)=2
+null null I I K get(L)=11
+null null I I K get(M)=12
+null Q Y Y Y get(Z)=25
+null Q Y Y Y get(Zoe)=null
+null remove(A)=null
+null remove(C)=2
+null remove(L)=11
+null remove(Q)=16
+null remove(Z)=25
+null remove(Zoe)=null
+Q 
+I Q Y 
+E I M Q U Y 
+C E G I K M O Q S U W Y 
+{B=1, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, M=12, N=13, O=14, P=15, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24}
+null put(A,10)=null
+null put(A,11)=10
+null put(L,20)=null
+null put(L,21)=20
+null put(Z,30)=null
+null put(Z,31)=30
+Q 
+I Q Y 
+E I M Q U Y 
+C E G I K M O Q S U W Y 
+{A=11, B=1, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, L=21, M=12, N=13, O=14, P=15, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24, Z=31}
+
+
+14. Implement remove.  It uses the same while loop you developed for
+    containsKey and get, but inside it removes the node with that key on
+    each level it is there.
+
+    PLUS if that makes the top dummy list empty, get rid of it, and
+    make top dummy the next lower dummy.
+
+    Look what happens when Q is removed.
+
+java prog07/SkipList
+null put(B,1)=null
+null put(C,2)=null
+null put(D,3)=null
+null put(E,4)=null
+null put(F,5)=null
+null put(G,6)=null
+null put(H,7)=null
+null put(I,8)=null
+null put(J,9)=null
+null put(K,10)=null
+null put(L,11)=null
+null put(M,12)=null
+null put(N,13)=null
+null put(O,14)=null
+null put(P,15)=null
+null put(Q,16)=null
+null put(R,17)=null
+null put(S,18)=null
+null put(T,19)=null
+null put(U,20)=null
+null put(V,21)=null
+null put(W,22)=null
+null put(X,23)=null
+null put(Y,24)=null
+null put(Z,25)=null
+Q 
+I Q Y 
+E I M Q U Y 
+C E G I K M O Q S U W Y 
+{B=1, C=2, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, L=11, M=12, N=13, O=14, P=15, Q=16, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24, Z=25}
+null null null null null containsKey(A)=false
+null null null null null containsKey(C)=true
+null null I I K containsKey(L)=true
+null null I I K containsKey(M)=true
+null Q Y Y Y containsKey(Z)=true
+null Q Y Y Y containsKey(Zoe)=false
+null null null null null get(A)=null
+null null null null null get(C)=2
+null null I I K get(L)=11
+null null I I K get(M)=12
+null Q Y Y Y get(Z)=25
+null Q Y Y Y get(Zoe)=null
+null null null null null remove(A)=null
+null null null null null remove(C)=2
+null null I I K remove(L)=11
+null null I M O remove(Q)=16
+null Y Y Y remove(Z)=25
+null Y Y Y remove(Zoe)=null
+I Y 
+E I M U Y 
+E G I K M O S U W Y 
+{B=1, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, M=12, N=13, O=14, P=15, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24}
+null put(A,10)=null
+null put(A,11)=10
+null put(L,20)=null
+null put(L,21)=20
+null put(Z,30)=null
+null put(Z,31)=30
+I Y 
+E I M U Y 
+E G I K M O S U W Y 
+{A=11, B=1, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, L=21, M=12, N=13, O=14, P=15, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24, Z=31}
+
+
+DUE at the end of the LAB session next week:
+
+15. Implement put.  Make sure you understand slAdd or *ask questions*.
+
+    a. Every time it calculate the previous node on a (non-bottom)
+       level, it pushes it onto a stack.
+
+       The combined stack and queue interface (there isn't one just
+       for stack) is called "Deque".  It is implemented by ArrayDeque
+       and LinkedList.
+
+    b. Using the final start value, finish with the rest of DummyList
+       put.
+
+    c. While you "toss heads" use the heads() method:
+
+    d. Get the location of the node with the key. (It's right after
+       previous.)
+
+    e. If the stack is not empty, pop the previous previous, and
+       insert the ke after it.  (What's the value?)  (Hint:  d.)
+    
+    f. If the stack is empty, create a new top dummy.  (What is its
+       value?)
+
+       Add a Node with the key after this top dummy.  (See e for its
+       value.)
+
+       Looks like G is super lucky!
+
+java prog07/SkipList
+null put(B,1)=null
+null put(C,2)=null
+null C put(D,3)=null
+null D D D put(E,4)=null
+null D D D put(F,5)=null
+null D D D put(G,6)=null
+null G G G G G G G put(H,7)=null
+null G G G G G G H put(I,8)=null
+null G G G G G G H put(J,9)=null
+null G G G G G G H put(K,10)=null
+null G G G G G G K put(L,11)=null
+null G G G L L L L put(M,12)=null
+null G G G L L L L put(N,13)=null
+null G G G L L N N put(O,14)=null
+null G G G L L N N put(P,15)=null
+null G G G L L N P put(Q,16)=null
+null G G G L L N Q put(R,17)=null
+null G G G L L N R put(S,18)=null
+null G G G L L N R put(T,19)=null
+null G G G L L N R put(U,20)=null
+null G G G L L N R put(V,21)=null
+null G G G L L V V put(W,22)=null
+null G G G L L V V put(X,23)=null
+null G G G L L X X put(Y,24)=null
+null G G G L L X X put(Z,25)=null
+G 
+G 
+G 
+G L 
+D G L 
+D G L N V X 
+C D G H K L N P Q R V X Z 
+{B=1, C=2, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, L=11, M=12, N=13, O=14, P=15, Q=16, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24, Z=25}
+null null null null null null null null containsKey(A)=false
+null null null null null null null null containsKey(C)=true
+null G G G G G G K containsKey(L)=true
+null G G G L L L L containsKey(M)=true
+null G G G L L X X containsKey(Z)=true
+null G G G L L X Z containsKey(Zoe)=false
+null null null null null null null null get(A)=null
+null null null null null null null null get(C)=2
+null G G G G G G K get(L)=11
+null G G G L L L L get(M)=12
+null G G G L L X X get(Z)=25
+null G G G L L X Z get(Zoe)=null
+null null null null null null null null remove(A)=null
+null null null null null null null null remove(C)=2
+null G G G G G G K remove(L)=11
+null G G G G G N P remove(Q)=16
+null G G G G G X X remove(Z)=25
+null G G G G G X X remove(Zoe)=null
+G 
+G 
+G 
+G 
+D G 
+D G N V X 
+D G H K N P R V X 
+{B=1, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, M=12, N=13, O=14, P=15, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24}
+null null null null null null null null put(A,10)=null
+null null null null null null null null put(A,11)=10
+null G G G G G G K put(L,20)=null
+null G G G G G G K put(L,21)=20
+null G G G G G X X put(Z,30)=null
+null G G G G G X X put(Z,31)=30
+G 
+G 
+G 
+G 
+D G 
+D G N V X 
+A D G H K N P R V X 
+{A=11, B=1, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, L=21, M=12, N=13, O=14, P=15, R=17, S=18, T=19, U=20, V=21, W=22, X=23, Y=24, Z=31}
+
+
+
+
+
+
+
+
+
+  public boolean containsKey (Object keyAsObject) {
+    K key = (K) keyAsObject;
+    Node start = topDummy;
+    while (isSkip(start)) {
+      Node previous = findPrevious(key, start);
+      start = (Node) previous.value;
+    }
+    Node previous = findPrevious(key, start);
+    return keyIsNext(key, previous);
+  }
+
+  
+  
+  protected DirectoryEntry[] theDirectory =
+			new DirectoryEntry[INITIAL_CAPACITY];
+  protected DirectoryEntry[] bigDirectory = 
+  			new DirectoryEntry[2*INITIAL_CAPACITY];
+  
+  
+  	protected void add(String name, String number) {
+		if (size >= bigDirectory.length) {
+			theDirectory = bigDirectory;
+			bigDirectory = new DirectoryEntry[2*size];
+	 	}
+		if (size >= theDirectory.length) {
+			bigDirectory[size-1] = new DirectoryEntry(name, number);
+			bigDirectory[size - theDirectory.length - 1] = theDirectory[size - theDirectory.length - 1];
+			size++;
+		}
+		else {
+			theDirectory[size] = new DirectoryEntry(name, number);
+			size++;
+		}
+	}

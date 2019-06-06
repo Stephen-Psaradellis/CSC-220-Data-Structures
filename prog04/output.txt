@@ -1,0 +1,16 @@
+Psaradellis, Stephen	spsa220 
+Test DLLBasedPD.removeEntry
+java.lang.NullPointerException
+ERROR: remove eve from [ ann eve ] failed.
+java.lang.NullPointerException
+ERROR: remove eve from [ zoe ] failed.
+
+Test SortedDLLPD.find
+ERROR: Search for ann in [ ] failed.
+ERROR: Search for bob in [ ann eve ] returned false null
+
+Test SortedDLLPD.add
+ERROR: add eve to [ zoe ] yields [ zoe ]
+java.lang.NullPointerException
+ERROR: add eve to [ ann zoe ] failed.
+

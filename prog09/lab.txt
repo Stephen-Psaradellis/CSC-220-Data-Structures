@@ -1,0 +1,30 @@
+0. Create package prog09.
+
+1. Finish implementing InsertionSort and test.
+
+2. Ditto HeapSort.  (Uncomment line in main.)
+
+3. Ditto QuickSort.
+
+4. Ditto MergeSort.
+
+5. For homework, measure the running time of each sorting algorithm on
+   larger arrays of Integer.  If the user provides a size on the
+   command line, then make the array that size and initialize it with
+   random integers.  (random.nextInt() gives a random integer).
+
+   Don't print out the array if it is bigger than a 100 in size.
+
+   Print out the running time of each method for different sizes.  Use
+   System.nanoTime() but print out the time in milliseconds.
+
+6. Write the merge method in ExternalSort.  Test on number.txt and
+   then make your own file with different lengths to make sure you have
+   it right.
+
+
+
+
+
+
+

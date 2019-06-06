@@ -1,0 +1,37 @@
+If you are having any problems, draw a diagram for the TA and show him
+or her what you are trying to do.  You need to figure out as much for
+yourself as possible.
+
+0. Create package prog04 and install DLLEntry.java, DLLBasedPD.java,
+   and Main.java.
+
+1. Read DLLBasedPD.java up to save().  In save(), put in the missing loop.
+
+2. In add(), add the new entry to the end of the list.  Test your
+   program by running Main.  Add a new entry, save, and make sure it
+   appears in csc220.txt.
+
+3. Finish find().  Test.
+
+4. Finish removeEntry().  Test.
+
+Your tests should include adding, finding, and removing elements from
+the beginning, middle, and end.  It should not crash when you remove
+all the elements, nor when you add to an empty directory.
+
+
+HOMEWORK
+
+5. Change Main to use SortedDLLPD.  Copy your current find code into
+   SortedDLLPD find.
+
+6. In SortedDLLPD add, call find and then insert the new entry where
+   find tells it to.
+
+7. Modify find so it stops when it gets to the entry after the name it
+   is looking for and returns it instead.
+
+   Again, thoroughly test your program.
+
+
+

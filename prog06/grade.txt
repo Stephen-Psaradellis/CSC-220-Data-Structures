@@ -1,0 +1,15 @@
+LAB (lab-output.txt)
+
+20/20	ArrayQueue
+15/20	LinkedQueue
+
+HOMEWORK
+
+8/10	ArrayQueue modified Iterator
+
+25/25	WordPath human
+25/25	WordPath computer
+
+
+
+Total: 93/100
